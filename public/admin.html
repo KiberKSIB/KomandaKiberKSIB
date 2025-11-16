@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Администратор - Генератор идеального дня</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>⚙️ Панель администратора</h1>
+        <nav>
+            <span id="adminGreeting" class="user-greeting"></span>
+            <a href="#" id="adminProfileLink" class="btn-link">👤 Профиль</a>
+            <a href="#" onclick="logout()" class="btn-link">🚪 Выход</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Профиль администратора -->
+        <section id="adminProfileSection" class="admin-section" style="display: none;">
+            <h2>Профиль администратора</h2>
+            <div class="profile-info">
+                <div class="profile-card">
+                    <h3>Личная информация</h3>
+                    <div class="profile-data">
+                        <p><strong>Имя:</strong> <span id="adminProfileName"></span></p>
+                        <p><strong>Email:</strong> <span id="adminProfileEmail"></span></p>
+                        <p><strong>Телефон:</strong> <span id="adminProfilePhone"></span></p>
+                        <p><strong>Роль:</strong> <span style="color: #8b5cf6;">Администратор</span></p>
+                        <p><strong>Дата регистрации:</strong> <span id="adminProfileDate"></span></p>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <h3>Статистика</h3>
+                    <div class="profile-data">
+                        <p><strong>Всего мероприятий:</strong> <span id="statsEvents">0</span></p>
+                        <p><strong>Всего пользователей:</strong> <span id="statsUsers">0</span></p>
+                        <p><strong>Записей на мероприятия:</strong> <span id="statsRegistrations">0</span></p>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" onclick="showManagementSection()">← К управлению</button>
+        </section>
+
+        <!-- Управление мероприятиями -->
+        <section id="managementSection" class="admin-section">
+            <h2>Управление мероприятиями</h2>
+
+            <div class="add-event-form">
+                <h3>Добавить новое мероприятие</h3>
+                <form id="eventForm">
+                    <div class="form-group">
+                        <label for="eventName">Название мероприятия *</label>
+                        <input type="text" id="eventName" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="eventType">Тип *</label>
+                            <select id="eventType" required>
+                                <option value="">Выберите тип</option>
+                                <option value="концерт">Концерт</option>
+                                <option value="лекция">Лекция</option>
+                                <option value="мастер-класс">Мастер-класс</option>
+                                <option value="выставка">Выставка</option>
+                                <option value="спектакль">Спектакль</option>
+                                <option value="кино">Кино</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="eventLocation">Место проведения *</label>
+                            <input type="text" id="eventLocation" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="eventDate">Дата *</label>
+                            <input type="date" id="eventDate" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="eventStartTime">Время начала *</label>
+                            <input type="time" id="eventStartTime" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="eventDuration">Длительность (мин) *</label>
+                            <input type="number" id="eventDuration" min="15" step="15" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventDescription">Описание</label>
+                        <textarea id="eventDescription" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        ➕ Добавить мероприятие
+                    </button>
+                </form>
+            </div>
+
+            <div class="events-management">
+                <h3>Список мероприятий (<span id="totalEvents">0</span>)</h3>
+                <div class="table-controls">
+                    <input type="text" id="adminSearchInput" placeholder="Поиск...">
+                    <button id="exportBtn" class="btn btn-secondary">📥 Экспорт JSON</button>
+                    <button id="clearAllBtn" class="btn btn-danger">🗑️ Очистить все</button>
+                </div>
+                <div id="adminEventsList" class="admin-events-list"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Генератор идеального дня</p>
+    </footer>
+</div>
+
+<script src="admin.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор идеального дня - Фестиваль</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Генератор идеального дня</h1>
+        <p class="subtitle">Создайте персонализированный маршрут для фестиваля</p>
+    </header>
+
+    <main>
+        <div class="auth-container" id="authContainer">
+            <!-- Форма входа -->
+            <div class="auth-form" id="loginForm">
+                <h2>Вход в систему</h2>
+                <form id="loginFormElement">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Пароль</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Войти</button>
+                </form>
+                <p class="auth-switch">
+                    Нет аккаунта? <a href="#" id="showRegister">Зарегистрироваться</a>
+                </p>
+            </div>
+
+            <!-- Форма регистрации -->
+            <div class="auth-form" id="registerForm" style="display: none;">
+                <h2>Регистрация</h2>
+                <form id="registerFormElement">
+                    <div class="form-group">
+                        <label for="regName">Имя *</label>
+                        <input type="text" id="regName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail">Email *</label>
+                        <input type="email" id="regEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPassword">Пароль *</label>
+                        <input type="password" id="regPassword" required minlength="6">
+                        <small>Минимум 6 символов</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPhone">Телефон</label>
+                        <input type="tel" id="regPhone" placeholder="+7 (999) 999-99-99">
+                    </div>
+                    <div class="form-group">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Зарегистрироваться</button>
+                </form>
+                <p class="auth-switch">
+                    Уже есть аккаунт? <a href="#" id="showLogin">Войти</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>О приложении</h3>
+            <p>Приложение помогает посетителям больших фестивалей строить персонализированные маршруты на основе их предпочтений.</p>
+            <ul>
+                <li>Регистрируйтесь и создавайте профиль</li>
+                <li>Записывайтесь на интересующие события</li>
+                <li>Получайте несколько вариантов расписания</li>
+                <li>Избегайте временных конфликтов</li>
+                <li>Все записи сохраняются в профиле</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Генератор идеального дня. Все права защищены.</p>
+    </footer>
+</div>
+
+<script src="auth.js"></script>
+</body>
+</html>

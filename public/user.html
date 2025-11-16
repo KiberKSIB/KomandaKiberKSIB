@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пользователь - Генератор идеального дня</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>🎭 Генератор идеального дня</h1>
+        <nav>
+            <span id="userGreeting" class="user-greeting"></span>
+            <a href="#" id="profileLink" class="btn-link">👤 Профиль</a>
+            <a href="#" onclick="logout()" class="btn-link">🚪 Выход</a>
+            <button class="theme-toggle" title="Переключить тему">🌓</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Профиль пользователя -->
+        <section id="profileSection" class="user-section" style="display: none;">
+            <h2>Мой профиль</h2>
+            <div class="profile-info">
+                <div class="profile-card">
+                    <h3>Личная информация</h3>
+                    <div class="profile-data">
+                        <p><strong>Имя:</strong> <span id="profileName"></span></p>
+                        <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+                        <p><strong>Телефон:</strong> <span id="profilePhone"></span></p>
+                        <p><strong>Дата регистрации:</strong> <span id="profileDate"></span></p>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <h3>Мои записи на мероприятия (<span id="registeredCount">0</span>)</h3>
+                    <div id="registeredEventsList"></div>
+                </div>
+            </div>
+            <button class="btn btn-primary" onclick="showEventsSection()">← К мероприятиям</button>
+        </section>
+
+        <!-- Список мероприятий -->
+        <section id="eventsSection" class="user-section">
+            <h2>Выберите интересующие мероприятия</h2>
+
+            <div class="filter-bar">
+                <input type="text" id="searchInput" placeholder="Поиск мероприятий...">
+                <select id="typeFilter">
+                    <option value="">Все типы</option>
+                    <option value="концерт">Концерт</option>
+                    <option value="лекция">Лекция</option>
+                    <option value="мастер-класс">Мастер-класс</option>
+                    <option value="выставка">Выставка</option>
+                </select>
+            </div>
+
+            <div id="eventsList" class="events-list"></div>
+
+            <div class="selected-events">
+                <h3>Выбрано мероприятий: <span id="selectedCount">0</span></h3>
+                <div id="selectedList"></div>
+            </div>
+
+            <button id="generateBtn" class="btn btn-primary btn-large" disabled>
+                ✨ Сгенерировать маршруты
+            </button>
+        </section>
+
+        <!-- Маршруты -->
+        <section id="routesSection" class="routes-section" style="display: none;">
+            <h2>Сгенерированные маршруты</h2>
+            <div id="routesList"></div>
+            <button class="btn btn-secondary" onclick="showEventsSection()">← Назад к мероприятиям</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Генератор идеального дня</p>
+    </footer>
+</div>
+
+<script src="user.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>
