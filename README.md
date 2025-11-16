@@ -38,5 +38,11 @@
 |---|---|---|
 | Администратор | admin@gmail.com | 111111 |
 Хотите, чтобы я сохранил этот текст в отдельный файл или предложил другой вариант оформления?
+<img width="1898" height="877" alt="Снимок" src="https://github.com/user-attachments/assets/946c933a-9ed4-4838-98c7-085d3dc4626b" />
+
+
+<img width="894" height="843" alt="Снимок1" src="https://github.com/user-attachments/assets/e42aba4f-f743-40d1-bd1d-e25be1f45ae0" />
+
 <img width="597" height="849" alt="изображение" src="https://github.com/user-attachments/assets/9398059e-f39d-48f3-95ed-5f9cec8ddf67" />
+
 
